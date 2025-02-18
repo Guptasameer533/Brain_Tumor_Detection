@@ -4,32 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brain Tumor Classification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            background: #43e373;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background: #197422;
+        }
+    </style>
 </head>
 <body>
-    <h2>Upload CT or MRI Scan to Predict Brain Tumor</h2>
-
-    <!-- CT Scan Upload Form -->
-    <h3>Upload CT Scan</h3>
-    <form action="/" method="post" enctype="multipart/form-data">
-        <input type="file" name="ct_file" required>
-        <button type="submit">Upload & Predict CT</button>
-    </form>
-
-    <!-- MRI Scan Upload Form -->
-    <h3>Upload MRI Scan</h3>
-    <form action="/" method="post" enctype="multipart/form-data">
-        <input type="file" name="mri_file" required>
-        <button type="submit">Upload & Predict MRI</button>
-    </form>
-
-    {% if ct_prediction %}
-        <h3>CT Scan Prediction: {{ ct_prediction }}</h3>
-        <img src="{{ ct_image }}" alt="CT Scan" width="300px">
-    {% endif %}
-
-    {% if mri_prediction %}
-        <h3>MRI Scan Prediction: {{ mri_prediction }}</h3>
-        <img src="{{ mri_image }}" alt="MRI Scan" width="300px">
-    {% endif %}
+    <div class="container">
+        <h1>Brain Tumor Detection</h1>
+        
+        <div class="btn-container">
+            <a href="/ct" class="btn">CT Scan</a>
+            <a href="/mri" class="btn">MRI Scan</a>
+        </div>
+        
+        <h3>Select an option to proceed</h3>
+    </div>
 </body>
 </html>
