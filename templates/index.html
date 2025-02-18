@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Tumor Classification</title>
+</head>
+<body>
+    <h2>Upload CT or MRI Scan to Predict Brain Tumor</h2>
+
+    <!-- CT Scan Upload Form -->
+    <h3>Upload CT Scan</h3>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="ct_file" required>
+        <button type="submit">Upload & Predict CT</button>
+    </form>
+
+    <!-- MRI Scan Upload Form -->
+    <h3>Upload MRI Scan</h3>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="mri_file" required>
+        <button type="submit">Upload & Predict MRI</button>
+    </form>
+
+    {% if ct_prediction %}
+        <h3>CT Scan Prediction: {{ ct_prediction }}</h3>
+        <img src="{{ ct_image }}" alt="CT Scan" width="300px">
+    {% endif %}
+
+    {% if mri_prediction %}
+        <h3>MRI Scan Prediction: {{ mri_prediction }}</h3>
+        <img src="{{ mri_image }}" alt="MRI Scan" width="300px">
+    {% endif %}
+</body>
+</html>
