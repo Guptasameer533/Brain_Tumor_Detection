@@ -34,6 +34,13 @@ brain-tumor-detection/
 │── requirements.txt       # Required Python dependencies
 │── README.md              # Project documentation
 ```
+🧪 Model Training
+
+The CNN model was trained using TensorFlow/Keras on a dataset of brain scan images. It was trained using the VGG16 model, achieving an impressive 97.4% accuracy in tumor classification on the following dataset -
+
+https://www.kaggle.com/datasets/murtozalikhon/brain-tumor-multimodal-image-ct-and-mri
+
+The model utilizes feature extraction and classification layers to distinguish between tumor and non-tumor cases.
 
 ## 🚀 Installation & Usage
 
